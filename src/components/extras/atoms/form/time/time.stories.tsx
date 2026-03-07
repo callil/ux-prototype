@@ -8,7 +8,7 @@ import { ArdaTimeFieldInteractive } from './time-field-interactive';
 import { COMMON_TIMEZONES } from '@/types/extras/model/general/time/timezone';
 
 const meta: Meta<typeof ArdaTimeFieldInteractive> = {
-  title: 'Components/Extras/Atoms/Form/Time',
+  title: 'Components/Current/Atoms/Form/Time',
   component: ArdaTimeFieldInteractive,
   parameters: {
     layout: 'centered',

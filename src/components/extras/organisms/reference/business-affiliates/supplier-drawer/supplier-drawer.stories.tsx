@@ -7,7 +7,7 @@ import { sampleAffiliates } from '@/types/extras/reference/business-affiliates/b
 import { ArdaSupplierDrawer, type SupplierDrawerMode } from './supplier-drawer';
 
 const meta: Meta<typeof ArdaSupplierDrawer> = {
-  title: 'Components/Extras/Organisms/Reference/Business Affiliates/Supplier Drawer',
+  title: 'Components/Current/Organisms/Reference/Business Affiliates/Supplier Drawer',
   component: ArdaSupplierDrawer,
   parameters: {
     layout: 'fullscreen',

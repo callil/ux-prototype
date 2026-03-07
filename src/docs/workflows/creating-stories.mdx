@@ -1,10 +1,10 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 
-<Meta title="Docs/Workflows/Creating Stories" />
+<Meta title="Guides/Workflows/Creating Stories" />
 
 # How to Create New Stories
 
-This guide covers the conventions for creating Storybook stories in this project, including CSS theming, Dev Witness page stories, and component stories.
+This guide covers the conventions for creating Storybook stories in this project, including CSS theming, `App/Current` page stories, and component stories.
 
 ## CSS Theming with Layers
 
@@ -18,13 +18,13 @@ Stories in this project use **CSS `@layer`** to manage theme overrides. This all
 
 ### Which CSS File to Import
 
-| Story type | CSS to import | Notes |
-|---|---|---|
-| Component stories (extras) | None &#8212; uses the global default from `preview.ts` | Base theme is already loaded |
-| Dev Witness page stories | `@/styles/extras/vendored-theme.css` | Must match the real app appearance |
-| Canary component stories | `@/styles/canary/globals.css` (when available) | For canary-specific theming |
+| Story type                                                   | CSS to import                                          | Notes                              |
+| ------------------------------------------------------------ | ------------------------------------------------------ | ---------------------------------- |
+| Current-track component stories (`src/components/extras/`)   | None &#8212; uses the global default from `preview.ts` | Base theme is already loaded       |
+| `App/Current` page stories (`src/dev-witness/`)              | `@/styles/extras/vendored-theme.css`                   | Must match the real app appearance |
+| Migration-track component stories (`src/components/canary/`) | `@/styles/canary/globals.css` (when available)         | For migration-specific theming     |
 
-### Example: Dev Witness Story with Theme Override
+### Example: `App/Current` Story with Theme Override
 
 ```tsx
 // src/dev-witness/<section>/my-page.stories.tsx
@@ -35,7 +35,7 @@ import MyPage from '@frontend/app/my-page/page';
 import '@/styles/extras/vendored-theme.css';
 
 const meta: Meta<typeof MyPage> = {
-  title: 'Dev Witness/Section/My Page',
+  title: 'App/Current/Section/My Page',
   component: MyPage,
   tags: ['app-route:/my-page'],
   parameters: {
@@ -54,7 +54,7 @@ type Story = StoryObj<typeof MyPage>;
 export const Default: Story = {};
 ```
 
-### Example: Component Story (No Override Needed)
+### Example: Current-Track Component Story (No Override Needed)
 
 ```tsx
 // src/components/extras/atoms/my-atom/my-atom.stories.tsx
@@ -64,7 +64,7 @@ import { MyAtom } from './my-atom';
 // No CSS import needed — uses global default from preview.ts
 
 const meta: Meta<typeof MyAtom> = {
-  title: 'Components/Extras/Atoms/My Atom',
+  title: 'Components/Current/Atoms/My Atom',
   component: MyAtom,
 };
 
@@ -76,9 +76,9 @@ export const Default: Story = {};
 
 ## Story File Conventions
 
-*(This section will be expanded as conventions are finalized.)*
+_(This section will be expanded as conventions are finalized.)_
 
-## Dev Witness Stories
+## `App/Current` Stories
 
-For detailed guidance on creating Dev Witness page stories, see the
-[Dev Witness Contributing Guide](?path=/docs/docs-storybook-structure-dev-witness-contributing--docs).
+For detailed guidance on creating mirrored app page stories, see the
+[App Current Contributing Guide](?path=/docs/app-current-contributing--docs).

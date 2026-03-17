@@ -49,8 +49,8 @@ const gridTheme = themeQuartz.withParams({
   headerColumnResizeHandleHeight: '50%',
   headerColumnResizeHandleWidth: 1,
   columnBorder: false,
-  wrapperBorder: true,
-  wrapperBorderRadius: 8,
+  wrapperBorder: false,
+  wrapperBorderRadius: 0,
   rowHeight: 48,
   headerHeight: 36,
   popupShadow: '0 4px 16px color-mix(in srgb, var(--foreground) 12%, transparent)',
@@ -66,7 +66,7 @@ const gridTheme = themeQuartz.withParams({
 const gridColorVars = {
   '--ag-background-color': 'var(--base-background)',
   '--ag-foreground-color': 'var(--base-foreground)',
-  '--ag-border-color': 'var(--base-border)',
+  '--ag-border-color': 'var(--base-border-strong)',
   '--ag-accent-color': 'var(--base-primary)',
   '--ag-header-text-color': 'var(--base-foreground)',
   '--ag-header-background-color': 'var(--secondary)',
@@ -404,6 +404,7 @@ export function ItemGrid({
 
       <div
         ref={gridContainerRef}
+        className="overflow-hidden rounded-lg border border-[var(--base-border-strong)]"
         style={{
           ...(!autoHeight && { height: typeof height === 'number' ? `${height}px` : height }),
           ...gridColorVars,

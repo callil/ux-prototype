@@ -167,7 +167,7 @@ export function ArdaActionToolbar({ actions, overflowActions, className }: ArdaA
               <DropdownMenuItem
                 key={action.key}
                 onClick={action.onAction}
-                disabled={action.disabled || action.loading}
+                disabled={action.disabled || action.loading || false}
               >
                 {action.label}
               </DropdownMenuItem>

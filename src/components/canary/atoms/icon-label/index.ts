@@ -1,2 +1,2 @@
-export { ArdaIconLabel } from './icon-label';
-export type { ArdaIconLabelProps } from './icon-label';
+export { IconLabel } from './icon-label';
+export type { IconLabelProps } from './icon-label';

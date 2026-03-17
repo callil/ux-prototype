@@ -1,2 +1,2 @@
-export { ArdaBrandLogo, ArdaBrandIcon } from './brand-logo';
-export type { ArdaBrandLogoProps, ArdaBrandIconProps } from './brand-logo';
+export { BrandLogo, BrandIcon } from './brand-logo';
+export type { BrandLogoProps, BrandIconProps } from './brand-logo';
